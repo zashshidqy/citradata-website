@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product - Citradata Project Information Services</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: { 
+                        brandBlue: '#0057a8', 
+                        brandRed: '#dc2626'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-[#F8FAFC] text-slate-800 antialiased flex flex-col min-h-screen selection:bg-brandBlue/20 selection:text-brandBlue">
+
+    <div class="bg-slate-900 text-slate-400 text-[9px] md:text-[10px] py-1.5 px-4 md:px-6 text-center md:text-right tracking-[0.2em] font-semibold uppercase">
+        www.citradataconstruction.com
+    </div>
+
+    <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-xl border-b border-slate-200/60 transition-all duration-300 shadow-sm relative">
+        <div class="max-w-7xl mx-auto px-4 md:px-6 py-3 md:py-4 flex justify-between items-center">
+            <a href="../index.html" class="flex flex-col hover:opacity-80 transition-opacity">
+                <img src="/assets/images/citradata-logo.png" alt="Citradata Logo" class="h-6 md:h-10 object-contain">
+            </a>
+            
+            <ul class="hidden lg:flex space-x-10 text-sm font-semibold text-slate-500">
+                <li><a href="../index.html" class="hover:text-slate-900 transition-colors">Home</a></li>
+                <li><a href="product.html" class="text-brandBlue border-b-2 border-brandBlue pb-1">Product</a></li>
+                <li><a href="about.html" class="hover:text-slate-900 transition-colors">About</a></li>
+                <li><a href="contact.html" class="hover:text-slate-900 transition-colors">Contact</a></li>
+            </ul>
+            
+            <div class="hidden lg:flex items-center space-x-4">
+                <a href="#" class="px-6 py-2 text-sm font-semibold text-white bg-brandRed rounded-full shadow-md hover:bg-red-700 transition-all">Sign in</a>
+                <a href="#" class="px-6 py-2 text-sm font-semibold text-white bg-brandBlue rounded-full shadow-md hover:bg-blue-800 transition-all">Find Projects</a>
+            </div>
+
+            <button id="mobile-menu-btn" class="lg:hidden text-slate-600 hover:text-brandBlue text-2xl transition-colors">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="hidden lg:hidden absolute top-full left-0 w-full bg-white/95 backdrop-blur-xl border-b border-slate-200/60 shadow-xl transition-all duration-300">
+            <div class="px-4 pt-2 pb-6 space-y-2">
+                <a href="../index.html" class="block px-4 py-3 text-sm font-semibold text-slate-600 hover:text-brandBlue hover:bg-slate-50 rounded-xl transition-colors">Home</a>
+                <a href="product.html" class="block px-4 py-3 text-sm font-semibold text-brandBlue bg-blue-50/50 rounded-xl transition-colors">Product</a>
+                <a href="about.html" class="block px-4 py-3 text-sm font-semibold text-slate-600 hover:text-brandBlue hover:bg-slate-50 rounded-xl transition-colors">About</a>
+                <a href="contact.html" class="block px-4 py-3 text-sm font-semibold text-slate-600 hover:text-brandBlue hover:bg-slate-50 rounded-xl transition-colors">Contact</a>
+                
+                <div class="pt-4 pb-2 border-t border-slate-100 flex flex-col space-y-3 px-2">
+                    <a href="#" class="w-full text-center px-6 py-3 text-sm font-semibold text-slate-700 bg-white border border-slate-200 rounded-xl shadow-sm hover:bg-slate-50">Sign in</a>
+                    <a href="#" class="w-full text-center px-6 py-3 text-sm font-semibold text-white bg-brandBlue rounded-xl shadow-md hover:bg-blue-800">Find Projects</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-grow">
+        
+        <header class="relative w-full aspect-[4/3] sm:aspect-[16/9] lg:aspect-[21/9] min-h-[400px] max-h-[500px] flex items-center justify-center overflow-hidden bg-slate-900">
+            <div class="absolute inset-0 z-0">
+                <img src="/assets/images/hero.png" alt="Construction Hero" class="w-full h-full object-cover object-center" />
+                <div class="absolute inset-0 bg-gradient-to-r from-brandBlue/90 to-brandBlue/50 mix-blend-multiply"></div>
+            </div>
+            <div class="relative z-10 max-w-5xl mx-auto px-4 md:px-6 text-center">
+                <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-4 tracking-tight drop-shadow-2xl">
+                    Discover accurate and detailed <br class="hidden sm:block"> construction data
+                </h1>
+                <p class="text-sm sm:text-base md:text-xl text-blue-50/90 font-medium max-w-2xl mx-auto tracking-wide drop-shadow-md">
+                    to identify potential market opportunities <br class="hidden sm:block"> and strengthen business connections
+                </p>
+            </div>
+        </header>
+
+        <section class="py-16 md:py-24 relative z-10">
+            <div class="max-w-4xl mx-auto px-4 md:px-6 space-y-12">
+                
+                <article class="bg-white rounded-[2rem] p-8 md:p-12 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100">
+                    <div class="flex items-center gap-5 mb-8 pb-8 border-b border-slate-100">
+                        <div class="w-14 h-14 rounded-2xl bg-red-50 flex items-center justify-center text-brandRed shrink-0">
+                            <i class="fas fa-building text-2xl"></i>
+                        </div>
+                        <div>
+                            <h2 class="text-3xl font-extrabold tracking-tight text-slate-900">Construction Data</h2>
+                            <p class="text-sm text-slate-500 font-medium mt-1">Digital & Printed Project Information</p>
+                        </div>
+                    </div>
+
+                    <div class="space-y-6 text-slate-600 text-base md:text-lg leading-relaxed font-medium">
+                        <p class="text-slate-900 font-semibold text-xl leading-snug">
+                            The core service provided by Citradata Construction Data consists of the provision of construction project data in both digital and printed formats.
+                        </p>
+                        
+                        <p>Citradata digital version is an online platform that provides unlimited real-time access to the latest construction project data and progress updates published on the Citradata website.</p>
+                        
+                        <div class="rounded-2xl border border-slate-200 bg-slate-50 p-6 md:p-8 my-8 relative">
+                            <p class="text-slate-900 font-bold mb-3 text-lg">Citradata Digital Editions offer significant advantages over traditional print versions.</p>
+                            <p class="text-sm md:text-base text-slate-600">The key benefits include convenience and instant accessibility, allowing users to retrieve the latest project information at any time and from any location with an internet connection. The digital edition feature offers substantial advantages by transforming static content into interactive content.</p>
+                        </div>
+
+                        <p>Citradata members are able to undertake efficient searches for projects according to their specific requirements, identify key individuals for further follow-up, and download Excel sheets that facilitate more comprehensive data analysis.</p>
+                        
+                        <p>Citradata Printed Edition is a hardcopy magazine published on a monthly basis. The content and project information featured in the magazine is the same as in the Citradata Digital Edition. In accordance with the increasing popularity of digital editions, Citradata is encouraging its members to transition from print to digital.</p>
+                        
+                        <blockquote class="italic text-slate-500 border-l-4 border-slate-200 pl-5 mt-8">
+                            We continue to emphasise the value of digital editions, extending beyond simple convenience to encompass interactive capabilities, immediate access, customised features and cost efficiencies that traditional print cannot match.
+                        </blockquote>
+                    </div>
+                </article>
+
+                <article class="bg-white rounded-[2rem] p-8 md:p-12 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100">
+                    <div class="flex items-center gap-5 mb-8 pb-8 border-b border-slate-100">
+                        <div class="w-14 h-14 rounded-2xl bg-blue-50 flex items-center justify-center text-brandBlue shrink-0">
+                            <i class="fas fa-chart-pie text-2xl"></i>
+                        </div>
+                        <div>
+                            <h2 class="text-3xl font-extrabold tracking-tight text-slate-900">Market Insights</h2>
+                            <p class="text-sm text-slate-500 font-medium mt-1">Analysis Reports & Customised Research</p>
+                        </div>
+                    </div>
+
+                    <div class="space-y-6 text-slate-600 text-base md:text-lg leading-relaxed font-medium">
+                        <p class="text-slate-900 font-semibold text-xl leading-snug">
+                            The core services provided by Citradata Market Insights comprise the regular market analysis reports and the provision of customised market research with a specific focus on the construction market sector.
+                        </p>
+                        
+                        <div class="rounded-2xl border border-slate-200 bg-white p-6 my-8 shadow-sm">
+                            <h3 class="font-bold text-slate-900 text-lg mb-3 flex items-center gap-3">
+                                <i class="fas fa-file-alt text-brandBlue"></i> Monthly Project Summary
+                            </h3>
+                            <p class="text-sm md:text-base text-slate-600">Provides a monthly overview of the latest construction projects and valuable market insights, based on construction project data published by Citradata Project Information Services. The report provides an overview and analysis of the latest projects, from design planning to the early stages of construction, offering business opportunities for those involved in construction projects.</p>
+                        </div>
+
+                        <p>A comprehensive analysis encompasses a range of economic indicators, alongside the most recent government policies and private sector business expansion, all of which exert a significant influence on the construction sector.</p> 
+                        
+                        <p>The analysis is grounded in a comprehensive overview of seven primary construction project sectors:</p>
+                        
+                        <div class="flex flex-wrap gap-2 md:gap-3 pt-2">
+                            <span class="px-4 py-2 bg-slate-50 border border-slate-200 rounded-lg text-sm font-semibold text-slate-700">Residential</span>
+                            <span class="px-4 py-2 bg-slate-50 border border-slate-200 rounded-lg text-sm font-semibold text-slate-700">Industrial</span>
+                            <span class="px-4 py-2 bg-slate-50 border border-slate-200 rounded-lg text-sm font-semibold text-slate-700">Office</span>
+                            <span class="px-4 py-2 bg-slate-50 border border-slate-200 rounded-lg text-sm font-semibold text-slate-700">Retail</span>
+                            <span class="px-4 py-2 bg-slate-50 border border-slate-200 rounded-lg text-sm font-semibold text-slate-700">Hospitality</span>
+                            <span class="px-4 py-2 bg-slate-50 border border-slate-200 rounded-lg text-sm font-semibold text-slate-700">Hospitals</span>
+                            <span class="px-4 py-2 bg-slate-100 border border-slate-200 rounded-lg text-sm font-semibold text-slate-500">Other Construction</span>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-slate-900 text-slate-300 pt-16 pb-8 md:pt-20 md:pb-10">
+        <div class="max-w-7xl mx-auto px-4 md:px-6 grid md:grid-cols-2 gap-12 lg:gap-24">
+            <div>
+                <img src="/assets/images/citradata-logo.png" alt="" class="h-8 md:h-10 object-contain mb-4 filter brightness-0 invert opacity-80">
+                <div class="text-[9px] md:text-[10px] text-slate-500 uppercase tracking-widest font-bold mb-6 md:mb-8">Project Information Services</div>
+                <p class="text-xs md:text-sm leading-relaxed text-slate-400 font-medium max-w-sm mb-6 md:mb-8">Citradata is a pioneer in delivering comprehensive construction project data information, with over two decades of experience.</p>
+                <div class="flex space-x-4">
+                    <a href="https://id.linkedin.com/company/pt-citradata-indonusa" class="w-8 h-8 md:w-10 md:h-10 rounded-full bg-slate-800 flex items-center justify-center text-white hover:bg-brandBlue transition-all"><i class="fab fa-linkedin-in text-sm md:text-base"></i></a>
+                    <a href="https://www.instagram.com/citradata/" class="w-8 h-8 md:w-10 md:h-10 rounded-full bg-slate-800 flex items-center justify-center text-white hover:bg-brandBlue transition-all"><i class="fab fa-instagram text-sm md:text-base"></i></a>
+                </div>
+            </div>
+            <div class="text-xs md:text-sm font-medium space-y-4">
+                <strong class="text-white block text-base md:text-lg mb-4 md:mb-6 font-bold tracking-tight">PT Citradata Indonusa</strong>
+                <p class="text-slate-400">Taman Pegangsaan Indah Blok T/No. 26,</p>
+                <p class="text-slate-400">Jalan Pegangsaan Dua, Kelapa Gading, Jakarta 14250</p>
+                <div class="pt-4 space-y-3">
+                    <p class="flex items-center text-slate-300"><i class="fas fa-phone w-6 text-brandRed"></i> 021 460 6509, 460 6518</p>
+                    <p class="flex items-center text-slate-300"><i class="fab fa-whatsapp w-6 text-green-500"></i> 0878 1610 9958 (WhatsApp Only)</p>
+                    <p class="flex items-center text-slate-300"><i class="fas fa-envelope w-6 text-brandBlue"></i> citra_jkt@citradataconstruction.com</p>
+                    <p class="flex items-center text-slate-300 break-all"><i class="fas fa-globe w-6 text-slate-500"></i> <a href="https://www.citradataconstruction.com" class="hover:text-white transition-colors">www.citradataconstruction.com</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 md:px-6 mt-12 md:mt-16 pt-6 md:pt-8 border-t border-slate-800 text-center flex flex-col md:flex-row justify-between items-center text-[10px] md:text-xs text-slate-500 font-medium">
+            <p>© 2026 PT Citradata Indonusa. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const mobileBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileIcon = mobileBtn ? mobileBtn.querySelector('i') : null;
+
+            if (mobileBtn && mobileMenu && mobileIcon) {
+                mobileBtn.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('hidden');
+
+                    if (mobileMenu.classList.contains('hidden')) {
+                        mobileIcon.classList.remove('fa-times');
+                        mobileIcon.classList.add('fa-bars');
+                    } else {
+                        mobileIcon.classList.remove('fa-bars');
+                        mobileIcon.classList.add('fa-times');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
