@@ -20,3 +20,38 @@
     width: 24px !important;
     border-radius: 10px !important;
 }
+
+/* Smooth Infinite Logo Slider - Only for Valuable Clients */
+.client-slider-container {
+    overflow: hidden;
+    position: relative;
+}
+
+.client-slider {
+    display: flex;
+    width: fit-content;
+    animation: slideLeft 35s infinite linear;
+    animation-timing-function: linear;
+}
+
+/* Pause animation on hover */
+.client-slider-container:hover .client-slider {
+    animation-play-state: paused;
+}
+
+@keyframes slideLeft {
+    0% {
+        transform: translateX(-33.333%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .client-slider {
+        gap: 3rem;
+        animation-duration: 30s;
+    }
+}

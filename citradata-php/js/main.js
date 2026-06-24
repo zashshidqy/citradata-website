@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
+    // Hero Image Slider
     if(document.querySelector('.mySwiper')) {
         new Swiper(".mySwiper", {
             loop: true,
@@ -9,6 +10,7 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
+    // Navigation scroll effect
     const nav = document.querySelector('nav');
     window.addEventListener('scroll', () => {
         if (window.scrollY > 20) {

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Auto Slider - Collaborations & Clients</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+    <style>
+        .collaborationSwiper .swiper-slide,
+        .clientSwiper .swiper-slide {
+            height: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .collaborationSwiper .swiper-slide img,
+        .clientSwiper .swiper-slide img {
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            filter: grayscale(100%);
+            transition: all 0.3s ease;
+        }
+
+        .collaborationSwiper .swiper-slide img:hover,
+        .clientSwiper .swiper-slide img:hover {
+            filter: grayscale(0%);
+            transform: scale(1.05);
+        }
+
+        .collaborationSwiper,
+        .clientSwiper {
+            padding: 20px 0;
+        }
+
+        .collaborationSwiper .swiper-wrapper,
+        .clientSwiper .swiper-wrapper {
+            transition-timing-function: linear;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto py-8">
+        <h1 class="text-3xl font-bold text-center mb-8">Test Auto Slider</h1>
+        
+        <!-- Collaborations Section - Auto Slider -->
+        <section class="py-8 md:py-12 bg-slate-50 border-t border-slate-100 mb-8">
+            <div class="max-w-7xl mx-auto px-4 md:px-6">
+                <h3 class="text-center font-bold text-slate-400 uppercase tracking-[0.2em] text-[10px] md:text-[11px] mb-6 md:mb-8">Collaborations</h3>
+                <div class="swiper collaborationSwiper overflow-hidden">
+                    <div class="swiper-wrapper items-center">
+                        <div class="swiper-slide flex items-center justify-center">
+                            <img src="assets/images/quantum-logo.png" alt="Quantum" class="h-12 md:h-16 object-contain max-w-[160px] opacity-60 hover:opacity-100">
+                        </div>
+                        <div class="swiper-slide flex items-center justify-center">
+                            <img src="assets/images/modulus-logo.png" alt="Modulus" class="h-12 md:h-16 object-contain max-w-[160px] opacity-60 hover:opacity-100">
+                        </div>
+                        <div class="swiper-slide flex items-center justify-center">
+                            <img src="assets/images/citradata-logo.png" alt="Citradata" class="h-12 md:h-16 object-contain max-w-[160px] opacity-60 hover:opacity-100">
+                        </div>
+                        <!-- Duplicate for infinite loop -->
+                        <div class="swiper-slide flex items-center justify-center">
+                            <img src="assets/images/quantum-logo.png" alt="Quantum" class="h-12 md:h-16 object-contain max-w-[160px] opacity-60 hover:opacity-100">
+                        </div>
+                        <div class="swiper-slide flex items-center justify-center">
+                            <img src="assets/images/modulus-logo.png" alt="Modulus" class="h-12 md:h-16 object-contain max-w-[160px] opacity-60 hover:opacity-100">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Valuable Clients Section - Auto Slider -->
+        <section class="py-8 md:py-12 bg-white border-b border-slate-100">
+            <div class="max-w-7xl mx-auto px-4 md:px-6">
+                <h3 class="text-center font-bold text-slate-400 uppercase tracking-[0.2em] text-[10px] md:text-[11px] mb-6 md:mb-8">Valuable Clients</h3>
+                <div class="swiper clientSwiper overflow-hidden">
+                    <div class="swiper-wrapper items-center">
+                        <div class="swiper-slide flex items-center justify-center">
+                            <img src="assets/images/pacificpaint-logo.png" alt="Pacific Paint" class="h-10 md:h-12 object-contain max-w-[140px] opacity-60 hover:opacity-100">
+                        </div>
+                        <div class="swiper-slide flex items-center justify-center">
+                            <img src="assets/images/chinastate-logo.png" alt="China State" class="h-10 md:h-12 object-contain max-w-[140px] opacity-60 hover:opacity-100">
+                        </div>
+                        <div class="swiper-slide flex items-center justify-center">
+                            <img src="assets/images/magiglass-logo.png" alt="Magiglass" class="h-10 md:h-12 object-contain max-w-[140px] opacity-60 hover:opacity-100">
+                        </div>
+                        <div class="swiper-slide flex items-center justify-center">
+                            <img src="assets/images/prolink-logo.png" alt="Prolink" class="h-10 md:h-12 object-contain max-w-[140px] opacity-60 hover:opacity-100">
+                        </div>
+                        <div class="swiper-slide flex items-center justify-center">
+                            <img src="assets/images/grundfos-logo.png" alt="Grundfos" class="h-10 md:h-12 object-contain max-w-[140px] opacity-60 hover:opacity-100">
+                        </div>
+                        <!-- Duplicate for smooth infinite loop -->
+                        <div class="swiper-slide flex items-center justify-center">
+                            <img src="assets/images/pacificpaint-logo.png" alt="Pacific Paint" class="h-10 md:h-12 object-contain max-w-[140px] opacity-60 hover:opacity-100">
+                        </div>
+                        <div class="swiper-slide flex items-center justify-center">
+                            <img src="assets/images/chinastate-logo.png" alt="China State" class="h-10 md:h-12 object-contain max-w-[140px] opacity-60 hover:opacity-100">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Collaborations auto slider
+            new Swiper('.collaborationSwiper', {
+                loop: true,
+                slidesPerView: 2,
+                spaceBetween: 30,
+                centeredSlides: true,
+                autoplay: { 
+                    delay: 3000, 
+                    disableOnInteraction: false,
+                    pauseOnMouseEnter: true,
+                    reverseDirection: false
+                },
+                breakpoints: {
+                    480:  { slidesPerView: 3, spaceBetween: 40 },
+                    768:  { slidesPerView: 4, spaceBetween: 50 },
+                    1024: { slidesPerView: 5, spaceBetween: 60 }
+                }
+            });
+
+            // Valuable Clients auto slider (reverse direction for variety)
+            new Swiper('.clientSwiper', {
+                loop: true,
+                slidesPerView: 2,
+                spaceBetween: 30,
+                centeredSlides: true,
+                autoplay: { 
+                    delay: 2500, 
+                    disableOnInteraction: false,
+                    pauseOnMouseEnter: true,
+                    reverseDirection: true
+                },
+                breakpoints: {
+                    480:  { slidesPerView: 3, spaceBetween: 40 },
+                    768:  { slidesPerView: 4, spaceBetween: 50 },
+                    1024: { slidesPerView: 6, spaceBetween: 60 }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+</html>

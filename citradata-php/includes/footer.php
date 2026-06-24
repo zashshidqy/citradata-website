@@ -10,7 +10,7 @@ if (!isset($footerVariant)) {
 
 if ($footerVariant === 'light') {
     $footerBg          = 'bg-white border-t border-border';
-    $logoClass         = 'h-7 md:h-8 object-contain mb-6 grayscale opacity-80';
+    $logoClass         = 'h-7 md:h-8 object-contain mb-6 opacity-80'; // Removed grayscale
     $sectionLabelClass = 'text-[10px] md:text-[11px] text-slate-500 uppercase tracking-[0.2em] font-bold mb-4';
     $descClass         = 'text-sm leading-relaxed text-mutedForeground max-w-sm mb-6';
     $socialIconClass   = 'w-10 h-10 rounded-full border border-slate-200 flex items-center justify-center text-slate-600 hover:bg-slate-50 hover:text-brandBlue transition-colors';
@@ -27,7 +27,7 @@ if ($footerVariant === 'light') {
     $globeColor        = $contactIconClass;
 } else {
     $footerBg          = 'bg-slate-900 text-slate-300';
-    $logoClass         = 'h-8 md:h-10 object-contain mb-4 filter brightness-0 invert opacity-80';
+    $logoClass         = 'h-8 md:h-10 object-contain mb-4'; // Removed 'filter' to make it colorful
     $sectionLabelClass = 'text-[9px] md:text-[10px] text-slate-500 uppercase tracking-widest font-bold mb-6 md:mb-8';
     $descClass         = 'text-xs md:text-sm leading-relaxed text-slate-400 font-medium max-w-sm mb-6 md:mb-8';
     $socialIconClass   = 'w-8 h-8 md:w-10 md:h-10 rounded-full bg-slate-800 flex items-center justify-center text-white hover:bg-brandBlue transition-all';
@@ -63,8 +63,23 @@ if ($footerVariant === 'light') {
             </div>
         </div>
 
-        <div class="text-xs md:text-sm font-medium space-y-4">
-            <strong class="<?php echo $companyNameClass; ?>">PT Citradata Indonusa</strong>
+        <div class="text-xs md:text-sm font-medium">
+            <!-- Company Header with Logo -->
+            <div class="flex items-center gap-4 mb-6 md:mb-8">
+                <div class="flex-shrink-0">
+                    <img src="<?php echo asset('assets/images/citradata-logo-pt.png'); ?>" 
+                         alt="PT Citradata" 
+                         class="h-10 md:h-12 w-auto object-contain">
+                </div>
+                <div class="flex items-center justify-center" style="height: 2.5rem; padding-top: 1rem;">
+                    <h3 class="<?php echo str_replace(['mb-4 md:mb-6', 'block'], ['mb-0', 'inline-block'], $companyNameClass); ?> leading-none">
+                        PT Citradata Indonusa
+                    </h3>
+                </div>
+            </div>
+            
+            <!-- Address & Contact Info -->
+            <div class="space-y-4">
             <?php if ($footerVariant === 'light'): ?>
                 <p class="<?php echo $addressClass; ?>">Taman Pegangsaan Indah Blok T/No. 26,<br>Jalan Pegangsaan Dua, Kelapa Gading, Jakarta 14250</p>
             <?php else: ?>
@@ -113,6 +128,7 @@ if ($footerVariant === 'light') {
                     </a>
                 </p>
             </div>
+            </div> <!-- Close space-y-4 div -->
         </div>
     </div>
 

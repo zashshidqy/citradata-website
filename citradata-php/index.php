@@ -204,46 +204,60 @@ require __DIR__ . '/includes/head.php';
         </div>
     </div>
 
-    <!-- Valuable Clients & Collaborations -->
-    <section class="py-12 md:py-16 bg-white border-y border-slate-100">
-        <div class="max-w-7xl mx-auto px-4 md:px-6 grid lg:grid-cols-2 gap-12 md:gap-16">
-            <div>
-                <h3 class="text-center font-bold text-slate-400 uppercase tracking-[0.2em] text-[10px] md:text-[11px] mb-6 md:mb-8">Valuable Clients</h3>
-                <?php if (!empty($clientLogos)): ?>
-                <div class="grid grid-cols-2 sm:grid-cols-3 gap-6 md:gap-8 items-center justify-items-center opacity-60 hover:opacity-100 transition-opacity duration-500">
-                    <?php foreach ($clientLogos as $logo): ?>
-                    <?php if (!empty($logo['website_url'])): ?>
-                    <a href="<?php echo e($logo['website_url']); ?>" target="_blank" rel="noopener noreferrer" title="<?php echo e($logo['name']); ?>">
-                        <img src="<?php echo asset($logo['logo_path']); ?>" alt="<?php echo e($logo['name']); ?>" class="h-8 md:h-10 object-contain hover:scale-105 transition-transform duration-300 max-w-[120px]">
-                    </a>
-                    <?php else: ?>
-                    <img src="<?php echo asset($logo['logo_path']); ?>" alt="<?php echo e($logo['name']); ?>" class="h-8 md:h-10 object-contain max-w-[120px]">
-                    <?php endif; ?>
+    <!-- Collaborations & Valuable Clients -->
+    <section class="py-16 md:py-20 bg-slate-50">
+        <div class="max-w-6xl mx-auto px-4 md:px-6">
+            
+            <!-- Collaborations (Static) -->
+            <div class="mb-16">
+                <h3 class="text-center font-bold text-slate-400 uppercase tracking-[0.25em] text-xs mb-10">Collaborations</h3>
+                <?php if (!empty($colabLogos)): ?>
+                <div class="flex items-center justify-center gap-16 flex-wrap">
+                    <?php foreach ($colabLogos as $logo): ?>
+                    <div class="flex items-center justify-center">
+                        <?php if (!empty($logo['website_url'])): ?>
+                        <a href="<?php echo e($logo['website_url']); ?>" target="_blank" rel="noopener noreferrer" title="<?php echo e($logo['name']); ?>" class="block transition-all duration-300 hover:scale-105">
+                            <img src="<?php echo asset($logo['logo_path']); ?>" alt="<?php echo e($logo['name']); ?>" class="h-12 object-contain max-w-[140px] opacity-50 hover:opacity-80 transition-opacity duration-300">
+                        </a>
+                        <?php else: ?>
+                        <img src="<?php echo asset($logo['logo_path']); ?>" alt="<?php echo e($logo['name']); ?>" class="h-12 object-contain max-w-[140px] opacity-50">
+                        <?php endif; ?>
+                    </div>
                     <?php endforeach; ?>
                 </div>
                 <?php else: ?>
-                <p class="text-center text-slate-400 text-xs">Belum ada logo.</p>
+                <p class="text-center text-slate-400 text-xs">Belum ada logo kolaborasi.</p>
                 <?php endif; ?>
             </div>
 
-            <div class="lg:border-l lg:border-slate-100 lg:pl-16">
-                <h3 class="text-center font-bold text-slate-400 uppercase tracking-[0.2em] text-[10px] md:text-[11px] mb-6 md:mb-8 mt-6 lg:mt-0">Collaborations</h3>
-                <?php if (!empty($colabLogos)): ?>
-                <div class="flex flex-wrap justify-center items-center gap-8 md:gap-12 opacity-60 hover:opacity-100 transition-opacity duration-500">
-                    <?php foreach ($colabLogos as $logo): ?>
-                    <?php if (!empty($logo['website_url'])): ?>
-                    <a href="<?php echo e($logo['website_url']); ?>" target="_blank" rel="noopener noreferrer" title="<?php echo e($logo['name']); ?>">
-                        <img src="<?php echo asset($logo['logo_path']); ?>" alt="<?php echo e($logo['name']); ?>" class="h-10 md:h-12 object-contain hover:scale-105 transition-transform duration-300 max-w-[140px]">
-                    </a>
-                    <?php else: ?>
-                    <img src="<?php echo asset($logo['logo_path']); ?>" alt="<?php echo e($logo['name']); ?>" class="h-10 md:h-12 object-contain max-w-[140px]">
-                    <?php endif; ?>
-                    <?php endforeach; ?>
+            <!-- Valuable Clients (Running Slider) -->
+            <div>
+                <h3 class="text-center font-bold text-slate-400 uppercase tracking-[0.25em] text-xs mb-10">Valuable Clients</h3>
+                <?php if (!empty($clientLogos)): ?>
+                <div class="client-slider-container overflow-hidden">
+                    <div class="client-slider flex items-center gap-20">
+                        <?php 
+                        // Duplicate logos for seamless infinite scroll
+                        $duplicatedClientLogos = array_merge($clientLogos, $clientLogos, $clientLogos);
+                        foreach ($duplicatedClientLogos as $logo): 
+                        ?>
+                        <div class="flex-shrink-0 flex items-center justify-center">
+                            <?php if (!empty($logo['website_url'])): ?>
+                            <a href="<?php echo e($logo['website_url']); ?>" target="_blank" rel="noopener noreferrer" title="<?php echo e($logo['name']); ?>" class="block transition-all duration-300 hover:scale-105">
+                                <img src="<?php echo asset($logo['logo_path']); ?>" alt="<?php echo e($logo['name']); ?>" class="h-10 object-contain max-w-[120px] opacity-50 hover:opacity-80 transition-opacity duration-300">
+                            </a>
+                            <?php else: ?>
+                            <img src="<?php echo asset($logo['logo_path']); ?>" alt="<?php echo e($logo['name']); ?>" class="h-10 object-contain max-w-[120px] opacity-50">
+                            <?php endif; ?>
+                        </div>
+                        <?php endforeach; ?>
+                    </div>
                 </div>
                 <?php else: ?>
-                <p class="text-center text-slate-400 text-xs">Belum ada logo.</p>
+                <p class="text-center text-slate-400 text-xs">Belum ada logo klien.</p>
                 <?php endif; ?>
             </div>
+            
         </div>
     </section>
 
