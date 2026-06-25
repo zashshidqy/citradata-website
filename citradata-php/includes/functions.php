@@ -138,3 +138,19 @@ function getLogos(string $type = 'client'): array
         return [];
     }
 }
+
+/**
+ * Ambil hero slides aktif dari DB
+ */
+function getHeroSlides(): array
+{
+    try {
+        $pdo = getDbConnection();
+        $stmt = $pdo->query(
+            'SELECT * FROM hero_slides WHERE is_active = 1 ORDER BY sort_order ASC'
+        );
+        return $stmt->fetchAll();
+    } catch (Exception $e) {
+        return [];
+    }
+}

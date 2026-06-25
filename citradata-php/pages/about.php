@@ -101,21 +101,30 @@ require __DIR__ . '/../includes/head.php';
                     </div>
                 </article>
 
-                <article class="bg-white rounded-[2rem] p-8 md:p-12 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100">
-                    <div class="flex items-center gap-5 mb-8 pb-8 border-b border-slate-100">
-                        <div class="w-14 h-14 rounded-2xl bg-blue-50 flex items-center justify-center text-brandBlue shrink-0">
-                            <i class="fas fa-eye text-2xl"></i>
-                        </div>
-                        <div>
-                            <h2 class="text-3xl font-extrabold tracking-tight text-slate-900">Our Vision</h2>
-                            <p class="text-sm text-slate-500 font-medium mt-1">The Primary Reference Source</p>
+                <article class="bg-white rounded-[2rem] shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 overflow-hidden">
+                    <!-- Header Image -->
+                    <div class="h-32 md:h-40 relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80" 
+                             alt="Our Vision" 
+                             class="w-full h-full object-cover opacity-70">
+                        <div class="absolute inset-0 bg-gradient-to-r from-blue-900/70 to-blue-900/20"></div>
+                        <div class="absolute bottom-4 left-6 md:left-8 flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-xl bg-white/90 backdrop-blur-sm flex items-center justify-center text-brandBlue">
+                                <i class="fas fa-eye text-lg"></i>
+                            </div>
+                            <div class="text-white">
+                                <h3 class="font-bold text-lg">Our Vision</h3>
+                                <p class="text-xs opacity-80">The Primary Reference Source</p>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="text-slate-600 text-base md:text-lg leading-relaxed font-medium">
-                        <p class="text-xl md:text-2xl text-slate-800 font-light leading-snug">
-                            "To establish Citradata as the <span class="font-bold text-brandBlue">leading trusted and reputable</span> project construction data information provider, thereby strengthening its position as the primary reference source for all construction professionals."
-                        </p>
+                    <div class="p-8 md:p-12">
+                        <div class="text-slate-600 text-base md:text-lg leading-relaxed font-medium">
+                            <p class="text-xl md:text-2xl text-slate-800 font-light leading-snug">
+                                "To establish Citradata as the <span class="font-bold text-brandBlue">leading trusted and reputable</span> project construction data information provider, thereby strengthening its position as the primary reference source for all construction professionals."
+                            </p>
+                        </div>
                     </div>
                 </article>
 

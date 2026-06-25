@@ -5,6 +5,7 @@ $nav = [
     ['href' => url('admin/projects.php'),    'icon' => 'fa-building',   'label' => 'Projects',     'key' => 'projects'],
     ['href' => url('admin/news.php'),        'icon' => 'fa-newspaper',  'label' => 'Latest News',  'key' => 'news'],
     ['href' => url('admin/testimonials.php'),'icon' => 'fa-quote-left', 'label' => 'Testimonials', 'key' => 'testimonials'],
+    ['href' => url('admin/hero_slides.php'), 'icon' => 'fa-image',      'label' => 'Hero Slides',  'key' => 'hero_slides'],
     ['href' => url('admin/logos.php'),       'icon' => 'fa-images',     'label' => 'Logos',        'key' => 'logos'],
     ['href' => url('admin/messages.php'),    'icon' => 'fa-envelope',   'label' => 'Messages',     'key' => 'messages'],
     ['href' => url('admin/users.php'),       'icon' => 'fa-users',      'label' => 'Users',        'key' => 'users'],
