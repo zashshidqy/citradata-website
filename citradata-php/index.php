@@ -2,14 +2,35 @@
 require_once __DIR__ . '/includes/functions.php';
 require_once __DIR__ . '/config/database.php';
 
-$pageTitle    = 'Citradata - Project Information Services';
-$useSwiper    = true;
+$pageTitle      = 'Citradata - Project Information Services';
+$useSwiper      = true;
 $useTestiSwiper = true;
 
 $newsList     = getActiveNews(3);
 $testimonials = getActiveTestimonials(8);
 $clientLogos  = getLogos('client');
 $colabLogos   = getLogos('collaboration');
+
+// Ambil slide banner dari DB, fallback ke gambar statis kalau kosong
+try {
+    $pdo = getDbConnection();
+    $slideStmt = $pdo->query('SELECT * FROM hero_slides WHERE is_active = 1 ORDER BY sort_order ASC, id ASC');
+    $heroSlides = $slideStmt->fetchAll();
+} catch (Exception $e) {
+    $heroSlides = [];
+}
+
+// Fallback: pakai gambar statis kalau DB kosong
+if (empty($heroSlides)) {
+    $heroSlides = [
+        ['image_path' => 'assets/images/1.png', 'alt_text' => 'Collaboration'],
+        ['image_path' => 'assets/images/2.png', 'alt_text' => 'Meeting'],
+        ['image_path' => 'assets/images/3.png', 'alt_text' => 'Construction'],
+        ['image_path' => 'assets/images/4.png', 'alt_text' => 'Project'],
+        ['image_path' => 'assets/images/5.png', 'alt_text' => 'Planning'],
+        ['image_path' => 'assets/images/6.png', 'alt_text' => 'Planning 2'],
+    ];
+}
 
 require __DIR__ . '/includes/head.php';
 ?>
@@ -36,12 +57,14 @@ require __DIR__ . '/includes/head.php';
                 <div class="w-full rounded-[1.5rem] md:rounded-[2.5rem] overflow-hidden shadow-sm relative bg-[#F8FAFC] border border-slate-100">
                     <div class="swiper mySwiper w-full">
                         <div class="swiper-wrapper items-center">
-                            <div class="swiper-slide"><img src="<?php echo asset('assets/images/1.png'); ?>" alt="Collaboration" class="w-full h-auto max-h-[600px] object-contain" loading="lazy"></div>
-                            <div class="swiper-slide"><img src="<?php echo asset('assets/images/2.png'); ?>" alt="Meeting"       class="w-full h-auto max-h-[600px] object-contain" loading="lazy"></div>
-                            <div class="swiper-slide"><img src="<?php echo asset('assets/images/3.png'); ?>" alt="Construction"  class="w-full h-auto max-h-[600px] object-contain" loading="lazy"></div>
-                            <div class="swiper-slide"><img src="<?php echo asset('assets/images/4.png'); ?>" alt="Project"       class="w-full h-auto max-h-[600px] object-contain" loading="lazy"></div>
-                            <div class="swiper-slide"><img src="<?php echo asset('assets/images/5.png'); ?>" alt="Planning"      class="w-full h-auto max-h-[600px] object-contain" loading="lazy"></div>
-                            <div class="swiper-slide"><img src="<?php echo asset('assets/images/6.png'); ?>" alt="Planning-2"    class="w-full h-auto max-h-[600px] object-contain" loading="lazy"></div>
+                            <?php foreach ($heroSlides as $slide): ?>
+                            <div class="swiper-slide">
+                                <img src="<?php echo asset($slide['image_path']); ?>"
+                                     alt="<?php echo e($slide['alt_text'] ?? ''); ?>"
+                                     class="w-full h-auto max-h-[600px] object-contain"
+                                     loading="lazy">
+                            </div>
+                            <?php endforeach; ?>
                         </div>
                         <div class="swiper-pagination"></div>
                     </div>
@@ -243,11 +266,11 @@ require __DIR__ . '/includes/head.php';
                         ?>
                         <div class="flex-shrink-0 flex items-center justify-center">
                             <?php if (!empty($logo['website_url'])): ?>
-                            <a href="<?php echo e($logo['website_url']); ?>" target="_blank" rel="noopener noreferrer" title="<?php echo e($logo['name']); ?>" class="block transition-all duration-300 hover:scale-105">
-                                <img src="<?php echo asset($logo['logo_path']); ?>" alt="<?php echo e($logo['name']); ?>" class="h-10 object-contain max-w-[120px] opacity-50 hover:opacity-80 transition-opacity duration-300">
+                            <a href="<?php echo e($logo['website_url']); ?>" target="_blank" rel="noopener noreferrer" title="<?php echo e($logo['name']); ?>" class="block transition-all duration-100 hover:scale-105">
+                                <img src="<?php echo asset($logo['logo_path']); ?>" alt="<?php echo e($logo['name']); ?>" class="h-14 object-contain max-w-[160px] opacity-50 hover:opacity-80 transition-opacity duration-100">
                             </a>
                             <?php else: ?>
-                            <img src="<?php echo asset($logo['logo_path']); ?>" alt="<?php echo e($logo['name']); ?>" class="h-10 object-contain max-w-[120px] opacity-50">
+                            <img src="<?php echo asset($logo['logo_path']); ?>" alt="<?php echo e($logo['name']); ?>" class="h-14 object-contain max-w-[160px] opacity-50">
                             <?php endif; ?>
                         </div>
                         <?php endforeach; ?>
